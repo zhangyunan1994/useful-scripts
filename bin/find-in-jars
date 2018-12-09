@@ -14,6 +14,9 @@
 # @online-doc https://github.com/oldratlee/useful-scripts/blob/dev-2.x/docs/java.md#-find-in-jars
 # @author Jerry Lee (oldratlee at gmail dot com)
 
+set -eu
+set -o pipefail
+
 readonly PROG="`basename "$0"`"
 
 ################################################################################
@@ -63,9 +66,9 @@ clearResponsiveMessage() {
 }
 
 usage() {
-    local -r exit_code="$1"
-    shift
-    [ -n "$exit_code" -a "$exit_code" != 0 ] && local -r out=/dev/stderr || local -r out=/dev/stdout
+    local -r exit_code="${1:-0}"
+    (( $# > 0 )) && shift
+    [ "$exit_code" != 0 ] && local -r out=/dev/stderr || local -r out=/dev/stdout
 
     (( $# > 0 )) && { echo "$@"; echo; } > $out
 
@@ -112,8 +115,9 @@ EOF
 # parse options
 ################################################################################
 
-declare -a args=()
 declare -a dirs=()
+declare -a args=()
+declare -a extension=()
 while (( $# > 0 )); do
     case "$1" in
     -d|--dir)

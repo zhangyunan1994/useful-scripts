@@ -9,15 +9,14 @@
 # @online-doc https://github.com/oldratlee/useful-scripts/blob/dev-2.x/docs/shell.md#-c
 # @author Jerry Lee (oldratlee at gmail dot com)
 
-set -e
-set -o pipefail
+set -euo pipefail
 
 readonly PROG="`basename "$0"`"
 
 usage() {
-    local -r exit_code="$1"
-    shift
-    [ -n "$exit_code" -a "$exit_code" != 0 ] && local -r out=/dev/stderr || local -r out=/dev/stdout
+    local -r exit_code="${1:-0}"
+    (( $# > 0 )) && shift
+    [ "$exit_code" != 0 ] && local -r out=/dev/stderr || local -r out=/dev/stdout
 
     (( $# > 0 )) && { echo "$@"; echo; } > $out
 
@@ -47,6 +46,7 @@ EOF
 
 quiet=false
 eol=-n
+declare -a args=()
 while [ $# -gt 0 ]; do
     case "$1" in
     -k|--keep-eol)
