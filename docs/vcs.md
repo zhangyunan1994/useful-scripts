@@ -20,7 +20,7 @@
     拷贝当前`svn`目录对应的远程分支到系统的粘贴板，省去`CTRL+C`操作。  
     PS：`Git`分支不需要`URL`来引用，没有这个脚本的需求，直接给个分支名就好了。
 
-🍺 [swtrunk.sh](../swtrunk.sh)
+🍺 [swtrunk.sh](../legacy-bin/swtrunk.sh)
 ----------------------
 
 `svn`工作目录从分支（`branches`）切换到主干（`trunk`）。  
@@ -59,7 +59,7 @@ svn work dir /path/to/svn/work/dir1 switch from http://www.foo.com/project1/bran
 svn work dir /path/to/svn/work/dir2 switch from http://www.foo.com/project2/branches/feature1 to http://www.foo.com/project2/trunk !
 ```
 
-🍺 [svn-merge-stop-on-copy.sh](../svn-merge-stop-on-copy.sh)
+🍺 [svn-merge-stop-on-copy.sh](../legacy-bin/svn-merge-stop-on-copy.sh)
 ----------------------
 
 把指定的远程分支从刚新建分支以来的修改合并到本地`svn`目录或是另一个远程分支。  
@@ -85,7 +85,7 @@ svn-merge-stop-on-copy.sh http://www.foo.com/project1/branches/feature1 http://w
 
 [姜太公](https://github.com/jzwlqx)提供此脚本。
 
-🍺 [cp-svn-url.sh](../cp-svn-url.sh)
+🍺 [cp-svn-url.sh](../legacy-bin/cp-svn-url.sh)
 ----------------------
 
 拷贝当前`svn`目录对应的远程分支到系统的粘贴板，省去`CTRL+C`操作。  
