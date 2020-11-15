@@ -9,6 +9,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/oldratlee/useful-scripts.svg?style=social&label=Star&)](https://github.com/oldratlee/useful-scripts/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/oldratlee/useful-scripts.svg?style=social&label=Fork&)](https://github.com/oldratlee/useful-scripts/fork)
 
+> Notice: 本仓库 clone 自 oldratlee/useful-scripts，并增加了一些自己的脚本，详细见 [改动记录](changelog.md)
 
 👉 把平时有用的手动操作做成脚本，这样可以便捷的使用。 ✨
 
